@@ -46,7 +46,7 @@ def train(training_environment):
     _set_distributed_environment(training_environment.hosts)
 
     # MLSL: To enable MPI with PyTorch
-    mpi_enabled = env.additional_framework_parameters.get('sagemaker_mpi_enabled')
+    mpi_enabled = training_environment.additional_framework_parameters.get('sagemaker_mpi_enabled')
     
     if mpi_enabled:
         runner_type = runner.MPIRunnerType
